@@ -1,0 +1,186 @@
+.container {
+  width: 40rem;
+  max-width: 90vw;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  padding: 5rem 5rem 8rem 5rem;
+  position: relative;
+}
+
+.container .tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.container .tasks p {
+  font-size: 1.4rem;
+  color: #737c99;
+  text-align: center;
+}
+
+.container .top {
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 50%);
+}
+
+.container .top button {
+  background-color: #af7eeb;
+  outline: none;
+  border: none;
+  border-radius: 100rem;
+  padding: 2rem 4rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: #fff;
+  width: 20rem;
+  cursor: pointer;
+}
+
+.container .top button > svg {
+  font-size: 2.4rem;
+}
+
+.container .top button > svg > path {
+  stroke: #fff;
+  stroke-width: 0.3rem;
+}
+
+/* task */
+.task {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task .left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.task .left span.circle {
+  display: inline-block;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 0.1rem solid #8c96b9;
+}
+
+.task .left span.circle.done {
+  background-color: #af7eeb;
+}
+
+.task .left span.message {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  color: #8c96b9;
+  max-width: 85%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.task .right button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  cursor: pointer;
+}
+
+.task .right button > svg {
+  fill: #737c99;
+}
+
+/* form */
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 40rem;
+  max-width: 90vw;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0px 0px 10px 500rem rgba(0, 0, 0, 0.8);
+}
+
+.modal.open {
+  animation: open 0.2s ease-in-out 1 forwards;
+}
+
+@keyframes open {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.modal.close {
+  animation: close 0.05s ease-in-out 1 forwards;
+}
+
+@keyframes close {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.modal h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.05rem;
+  padding-bottom: 1rem;
+}
+.modal .inputBox {
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
+  padding: 1rem 0;
+}
+.modal .inputBox input {
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid #8a9bb6;
+  outline: none;
+}
+
+.modal .inputBox input:focus {
+  border: 2px solid #5280c9;
+}
+
+.modal .buttons {
+  text-align: right;
+  padding-top: 1rem;
+}
+
+.modal .buttons button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e5e5;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.modal .buttons button.add {
+  background-color: #af7eeb;
+  color: white;
+  margin-right: 1rem;
+}
